@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\src",
+    "\\src\\assets",
     "\\src\\components"
   ],
-  "SelectedNode": "\\src\\App.vue",
+  "SelectedNode": "\\src\\firebaseInit.js",
   "PreviewInSolutionExplorer": false
 }

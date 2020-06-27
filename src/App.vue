@@ -1,22 +1,28 @@
 <template>
     <div id="app">
-        <Contactbar />
-        <Navbar />
-        <WorkshopFeed />
+        <div class="cover">
+            <Contactbar />
+            <Navbar />
+            <Workshop />
+            <!--<WorkshopFeed />-->
+        </div>
     </div>
 </template>
 
 <script>
     import Navbar from './components/Navbar.vue';
     import Contactbar from './components/Contactbar.vue';
-    import WorkshopFeed from './components/WorkshopFeed.vue';
+    import Workshop from './components/Workshop.vue';
+    //import WorkshopFeed from './components/WorkshopFeed.vue';
+
 
     export default {
         name: 'App',
         components: {
             Navbar,
             Contactbar,
-            WorkshopFeed
+            //WorkshopFeed
+            Workshop
         },
         methods: {
         }
@@ -43,5 +49,14 @@
         /*font-family: 'Roboto Condensed', sans-serif;*/
         font-family: 'Proza Libre', sans-serif;
         font-size: large;
+    }
+
+    .cover {
+        height: 700%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(255,255,255,0.4)
     }
 </style>

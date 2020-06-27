@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase';
 
-const myApp = initializeApp({
+const firebase = initializeApp({
 	apiKey: "AIzaSyDn91X821ojWci5Zaf7ds5tnn2vieXQQls",
 	authDomain: "testproject-30112.firebaseapp.com",
 	databaseURL: "https://testproject-30112.firebaseio.com",
@@ -11,5 +11,5 @@ const myApp = initializeApp({
 	measurementId: "G-6WWGPFENJH"
 });
 
-export const database = myApp.firestore()
-export const workshopsRef = database.collection("workshops")
+export const db = firebase.database()
+export const workshops = db.ref('workshops')

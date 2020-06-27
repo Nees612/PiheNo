@@ -33,7 +33,8 @@
 <style scoped>
     nav {
         overflow: auto;
-        background-color: #FCCFDE;
+        /*background-color: #FCCFDE;*/
+        background-color: white;
         height: 33px;
         overflow-x: hidden;
         overflow-y: hidden;

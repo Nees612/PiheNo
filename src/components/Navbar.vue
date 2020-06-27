@@ -34,7 +34,7 @@
         components: {},
         data: () => {
             return {
-                gallery: 'Gall&#233ria',
+                gallery: 'Gal&#233ria',
                 home: 'Kezd&#337lap'
             }
         },
@@ -50,7 +50,9 @@
 
 <style scoped>
     nav {
+        z-index: 100;
         box-shadow: 0px 15px 21px rgba(0, 0, 0, 0.5);
-        background-color: #FCCFDE;
+        /*background-color: #FCCFDE;*/
+        background-color: white;
     }
 </style>
