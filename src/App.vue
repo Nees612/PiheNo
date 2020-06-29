@@ -44,7 +44,7 @@
     }
 
     html, body {
-        background-size: auto;
+        background-size: contain;
         background-image: url("./assets/images/background.png");
         /*font-family: 'Roboto Condensed', sans-serif;*/
         font-family: 'Proza Libre', sans-serif;
@@ -52,7 +52,7 @@
     }
 
     .cover {
-        height: 700%;
+        height: 600%;
         width: 100%;
         position: absolute;
         top: 0;

@@ -38,6 +38,7 @@
         height: 33px;
         overflow-x: hidden;
         overflow-y: hidden;
+        z-index: 40000;
     }
 
     .icon {
