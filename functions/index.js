@@ -29,8 +29,8 @@ exports.sendEmailNotification = functions.database.ref('workshoppers/{workshoppe
     authData.sendMail({
         from: 'info.piheno@anaga.com',
         to: `${data.Email}`,
-        subject: 'PiheNõ Workshop',
-        text: 'Jelentkezés megerõsítése',
-        html: 'Jelentkezés megerõsítése'
+        subject: 'PiheNÅ‘ Workshop',
+        text: 'JelentkezÃ©s megerÅ‘sÃ­tÃ©se',
+        html: 'JelentkezÃ©s megerÅ‘sÃ­tÃ©se'
     }).then(console.log('Email is succesfully sent.')).catch(err => console.log(err));
 })
