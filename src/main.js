@@ -12,6 +12,8 @@ import { firestorePlugin } from 'vuefire';
 Vue.use(firestorePlugin);
 Vue.use(VueParallax);
 
+Vue.prototype.$eventBus = new Vue()
+
 Vue.config.productionTip = false
 
 new Vue({

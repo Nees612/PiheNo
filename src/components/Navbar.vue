@@ -6,17 +6,17 @@
         <div class="item-container w-100">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">{{ decoder(home) }}<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="#">Kezdőlap<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">{{ decoder(gallery) }}</a>
+                    <a class="nav-link" href="#">Galléria</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Workshopok
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">{{decoder(workshop1)}}</a>
+                        <a class="dropdown-item" href="#">PiheNő</a>
                         <a class="dropdown-item" href="#">Another action</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Something else here</a>
@@ -24,7 +24,7 @@
                 </li>
             </ul>
         </div>
-        <button type="button" class="btn btn-outline-success">Jelentkezem</button>
+        <button type="button" class="btn btn-outline-success" v-on:click="openSignUp">Jelentkezem</button>
     </nav>
 </template>
 
@@ -33,18 +33,9 @@
     export default {
         name: 'Navbar',
         components: {},
-        data: () => {
-            return {
-                gallery: 'Gal&#233ria',
-                home: 'Kezd&#337lap',
-                workshop1: 'PiheN&#336'
-            }
-        },
         methods: {
-            decoder(str) {
-                var textArea = document.createElement('textarea');
-                textArea.innerHTML = str;
-                return textArea.value;
+            openSignUp: function () {
+                this.$eventBus.$emit('open-signUp');
             }
         }
     }
