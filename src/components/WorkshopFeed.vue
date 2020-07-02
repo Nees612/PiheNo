@@ -18,24 +18,6 @@
         components: {
             Workshop
         },
-        data() {
-            return {
-                name: String,
-                description: String,
-                //workshops: []
-            }
-        },
-        methods: {
-            //addWorkshop() {
-            //    workshops.push({ name: this.name, description: this.description })
-            //}
-        },
-        created: function () {
-            //workshops.on('value', (snapShot) => {
-            //    this.workshops = snapShot.val()
-            //})
-        }
-
     }
 </script>
 

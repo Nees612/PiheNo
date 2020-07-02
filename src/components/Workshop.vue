@@ -1,362 +1,624 @@
 <template>
-
-    <div data-aos="fade" data-aos-duration="800" id="prologe">
-        <div v-parallax="0.2" id="background">
-
-        </div>
-        <div data-aos="slide-up" data-aos-duration="800" class="item-one m-5 p-4">
-            <p class="mb-1 mt-5">
-                Magabiztos N’ kell minden csal·dba.
-                Egy csal·d Èrzelmi alappillÈre egy kipihent N’.
-                Egy olyan N’, aki minden konfliktust kezelni tud, aki meleg otthont tud var·zsolni csal·dj·nak.
-                Aki h·zis·rk·ny helyett egy megÈrtı, szeretı felesÈg, anya.
-                Ehhez az sz¸ksÈges, hogy Te mint N’ igenis tˆrıdj magaddal, legyen feltˆltıdÈs az Èletedben, legyen egy t·mogatÛ kˆzeg, ahol kibeszÈlheted problÈm·dat, vagy Èppen ˆrˆmˆdet.
-            </p>
-            <footer class="blockquote-footer mt-3">D·vid Anna M·ria <cite title="Source Title">ThÈtha Coach</cite></footer>
-            <button type="button" class="btn btn-outline-success mt-5">Jelentkezem</button>
-        </div>
-        <div data-aos="slide-up" data-aos-duration="800" class="item-two">
-            <p class="h1 mt-3">
-                PiheN’ Program
-            </p>
-            <p class="ml-3 mr-3">
-                PiheN’ Programunk pont errıl szÛl.
-                AzÈrt hoztuk lÈtre Programunkat, mert ˙gy l·tjuk, hogy a N’k mostan·ban, tisztelet a kivÈtelnek, elfelejtenek N’K lenni.
-                Egy N’ nemcsak anya Ès felesÈg.
-                Merj kilÈpni ebbıl. Az anyas·g Ès felesÈg szerepek mellett v·lj ˙jra, vagy elıszˆr olyan N’vÈ, aki ˆnbizalommal telve Èli mindennapjait.
-            </p>
-        </div>
-        <div class="item-three" data-aos="zoom-in">
-            <div data-aos="zoom-in-right" data-aos-duration="800" class="item-three-a">
-                <img class="m-4 w-100 rounded" src="../assets/images/workshop2.png" />
+  <div data-aos="fade" data-aos-duration="800" id="prologe">
+    <div v-if="showSignUpModal" class="my-modal">
+      <div class="card w-50 my-5 mx-auto sign-up-form">
+        <form>
+          <div class="form-group">
+            <div class="w-100 d-inline-block">
+              <span v-on:click="closeSignUp" class="float-right mr-3 mt-3 x-button">&#10005;</span>
             </div>
-            <div data-aos="zoom-in-left" data-aos-duration="800" class="item-three-b m-4">
-                <p class="m-5">
-                    …rezted-e m·r valaha, hogy szeretnÈl N’iesebb, lÈgiesebb lenni, de nem tudod, hogyan Èrd el?
-                    Tal·n irigykedsz is azokra, akik minden nap tˆkÈletesen nÈznek ki, jÛ a sminkj¸k, jÛ a hajuk, jÛ a ruh·juk, egyszÛval igazi N’k.
-                    Sok videot, blogot olvasol a N’iessÈgrıl, de mÈgis valahogy elmarad a v·rt ·ttˆrÈs az Èletedben.
-                </p>
-                <p class="m-2">
-                    A N’iessÈg kifejezÈse tanulhatÛ.
-                    PiheN’ Programunkon megtanÌtunk arra ...
-                </p>
-            </div>
-        </div>
-        <div class="sub-items m-5">
-            <div data-aos="flip-right"
-                 data-aos-duration="800" class="item-five-a inner-shadow rounded m-3">
-            </div>
-            <p v-parallax="0.1" data-aos="fade-up-left"
-               data-aos-duration="800" class="item-five-b p-3 h4 m-auto">
-                Hogyan Ès mely illÛolajokat haszn·ld N’iessÈged kifejezÈsÈre, felÈbresztÈsÈre Ès megÈlÈsÈre.
-            </p>
-
-            <div data-aos="flip-left"
-                 data-aos-duration="800" class="item-six-a inner-shadow rounded m-3">
-            </div>
-            <p v-parallax="0.1" data-aos="fade-up-right"
-               data-aos-duration="800" class="item-six-b p-3 h4 m-auto">
-                Hogyan maradj minden kˆr¸lmÈnyek kˆzˆtt N’.
-                ¡tbeszÈlj¸k, hogy milyen problÈm·kkal k¸zdenek a N’k manaps·g a mindennapokban, Ès azokra megold·sokat is kÌn·lunk theta-coaching mÛdszer¸nkkel.
-            </p>
-
-            <div data-aos="flip-right"
-                 data-aos-duration="800" class="item-seven-a inner-shadow rounded m-3">
-            </div>
-            <p v-parallax="0.1" data-aos="fade-up-left"
-               data-aos-duration="800" class="item-seven-b p-3 h4 m-auto">
-                Hogyan maradj minden kˆr¸lmÈnyek kˆzˆtt N’.
-                Hogyan sminkelj a mindennapokban, hogy ne legyen sok, de kevÈs sem a make-up-od.
-                Kinek mi ·ll jÛl, mi az, amitıl magabiztosnak Èrzed magad, amikor nem kell pironkodnod, ha valaki r·d szegezi
-                tekintetÈt, hanem b¸szkÈn, emelt fıvel ·llod a pillant·st, mert tiszt·ban vagy azzal, hogy a N’iessÈged rendben van.
-            </p>
-
-            <div data-aos="flip-right"
-                 data-aos-duration="800" class="item-eight-a inner-shadow rounded m-3">
-            </div>
-            <p v-parallax="0.1" data-aos="fade-up-left"
-               data-aos-duration="800" class="item-eight-b p-3 h4 m-auto">
-                SzÌnvar·zslattal meg·llapÌtjuk, melyik szÌn ·ll jÛl.
-                Mely szÌnekben pomp·zol, melyek, amelyek els·pasztanak.
-                ¡tbeszÈlj¸k Ès r·mutatunk arra, hogy mely szÌnekbıl ·lljon a ruhat·rad, hogy minden nap ˆnbizalommal telve lÈpj ki az utc·ra.
-            </p>
-        </div>
-        <div data-aos="zoom-in" class="item-nine">
-            <div class="item-nine-a">
-                <p class="h2 item-nine-a-title">
-                    PiheN’ Program Plusz
-                </p>
-                <p>
-                    …s, ha az elızıekben leÌrtak nem elegendıek, akkor mindezek mellÈ kapsz egy szeretetÈrintÈses arcmassz·zst.
-                </p>
-                <div class="item-nine-a-image inner-shadow ">
-                </div>
-            </div>
-            <div class="item-nine-b">
-                <p class="h2 item-nine-b-title">
-                    PiheN’ Program
-                    Extra Plusz
-                </p>
-                <p>
-                    R·ad·skÈnt kapsz egy arcjÛga Ûr·t is, amit ut·na otthon is alkalmazhatsz magadon.
-                </p>
-                <div class="item-nine-b-image inner-shadow ">
-                </div>
-            </div>
-        </div>
+            <p class="card-title h3 mx-auto my-3 d-inline-block">K√©rlek √≠rd be az e-mail c√≠med !</p>
+            <input
+              type="email"
+              class="form-control w-75 mx-auto text-center"
+              aria-describedby="emailHelp"
+              v-model="newEmail"
+              placeholder="E-mail"
+            />
+            <small
+              id="emailHelp"
+              v-if="!validEmailFormat"
+              class="form-text text-danger"
+            >A megadott e-mail c√≠m nem val√≥s !</small>
+            <small
+              id="emailHelp"
+              v-if="!validEmail"
+              class="form-text text-danger"
+            >Ez az e-mail c√≠m m√°r szerepel a jelentkez≈ëk k√∂z√∂tt !</small>
+            <small
+              id="emailHelp"
+              class="form-text text-muted"
+            >Az adatait bizalmasan kezelj√ºk, e-mail c√≠m√©t nem adjuk ki senkinek !</small>
+          </div>
+          <button type="submit" class="btn btn-primary mx-auto mb-3" v-on:click="onSubmit">Elk√ºld√©s</button>
+        </form>
+      </div>
     </div>
+    <div v-parallax="0.2" id="background" class="inner-shadow"></div>
+    <div data-aos="slide-up" data-aos-duration="800" class="item-one m-5 p-4">
+      <p class="m-3 text-justify">
+        Magabiztos N≈ê kell minden csal√°dba.
+        Egy csal√°d √©rzelmi alappill√©re egy kipihent N≈ê.
+        Egy olyan N≈ê, aki minden konfliktust kezelni tud, aki meleg otthont tud var√°zsolni csal√°dj√°nak.
+        Aki h√°zis√°rk√°ny helyett egy meg√©rt≈ë, szeret≈ë feles√©g, anya.
+        Ehhez az sz√ºks√©ges, hogy Te mint N≈ê igenis t√∂r≈ëdj magaddal, legyen felt√∂lt≈ëd√©s az √©letedben, legyen egy t√°mogat√≥ k√∂zeg, ahol kibesz√©lheted probl√©m√°dat, vagy √©ppen √∂r√∂m√∂det.
+      </p>
+      <footer class="blockquote-footer mt-3">
+        D√°vid Anna M√°ria
+        <cite title="Source Title" class="ml-3">Th√©tha Coach</cite>
+      </footer>
+      <button type="button" class="btn btn-outline-success mt-3" v-on:click="openSignUp">Jelentkezem</button>
+    </div>
+    <div class="item-three">
+      <div data-aos="slide-up" data-aos-duration="800" class="item-two">
+        <h1 class="mt-3">PiheN≈ë Program</h1>
+        <p class="h5 ml-3 mr-3 text-justify">
+          PiheN≈ê Programunk pont err≈ël sz√≥l.
+          Az√©rt hoztuk l√©tre Programunkat, mert √∫gy l√°tjuk, hogy a N≈êk mostan√°ban, tisztelet a kiv√©telnek, elfelejtenek N≈êK lenni.
+          Egy N≈ê nemcsak anya √©s feles√©g.
+          Merj kil√©pni ebb≈ël. Az anyas√°g √©s feles√©g szerepek mellett v√°lj √∫jra, vagy el≈ësz√∂r olyan N≈êv√©, aki √∂nbizalommal telve √©li mindennapjait.
+        </p>
+      </div>
+      <div data-aos="fade" class="item-three-bg inner-shadow image-border"></div>
+      <div data-aos="zoom-in-left" data-aos-duration="800" class="item-three-b m-5">
+        <p class="m-5 text-justify">
+          √ârezted-e m√°r valaha, hogy szeretn√©l N≈êiesebb, l√©giesebb lenni, de nem tudod, hogyan √©rd el?
+          Tal√°n irigykedsz is azokra, akik minden nap t√∂k√©letesen n√©znek ki, j√≥ a sminkj√ºk, j√≥ a hajuk, j√≥ a ruh√°juk, egysz√≥val igazi N≈êk.
+          Sok videot, blogot olvasol a N≈êiess√©gr≈ël, de m√©gis valahogy elmarad a v√°rt √°tt√∂r√©s az √©letedben.
+        </p>
+        <p class="m-5 text-justify">
+          A N≈êiess√©g kifejez√©se tanulhat√≥.
+          PiheN≈ê Programunkon megtan√≠tunk arra ...
+        </p>
+      </div>
+    </div>
+    <div v-parallax="0.3" class="sub-items-bg"></div>
+    <div class="sub-items">
+      <div
+        data-aos="flip-left"
+        data-aos-offset="300"
+        data-aos-easing="ease-in-sine"
+        class="item-five-a inner-shadow rounded m-3 image-border"
+      ></div>
+      <h3
+        data-aos="fade-down"
+        data-aos-easing="ease-in-sine"
+        data-aos-offset="300"
+        class="item-five-b p-4 h3 my-auto mx-5 text-justify"
+      >Hogyan √©s mely ill√≥olajokat haszn√°ld N≈êiess√©ged kifejez√©s√©re, fel√©breszt√©s√©re √©s meg√©l√©s√©re.</h3>
+
+      <div
+        data-aos="flip-right"
+        data-aos-offset="300"
+        data-aos-easing="ease-in-sine"
+        class="item-six-a inner-shadow rounded m-3 image-border"
+      ></div>
+      <h3
+        data-aos="fade-down"
+        data-aos-easing="ease-in-sine"
+        data-aos-offset="300"
+        class="item-six-b p-4 my-auto mx-5 text-justify"
+      >
+        Hogyan maradj minden k√∂r√ºlm√©nyek k√∂z√∂tt N≈ê.
+        √Åtbesz√©lj√ºk, hogy milyen probl√©m√°kkal k√ºzdenek a N≈êk manaps√°g a mindennapokban, √©s azokra megold√°sokat is k√≠n√°lunk theta-coaching m√≥dszer√ºnkkel.
+      </h3>
+
+      <div
+        data-aos="flip-left"
+        data-aos-offset="300"
+        data-aos-easing="ease-in-sine"
+        class="item-seven-a inner-shadow rounded m-3 image-border"
+      ></div>
+      <h3
+        data-aos="fade-down"
+        data-aos-easing="ease-in-sine"
+        data-aos-offset="300"
+        class="item-seven-b p-4 my-auto mx-5 text-justify"
+      >
+        Hogyan sminkelj a mindennapokban, hogy ne legyen sok, de kev√©s sem a make-up-od.
+        Kinek mi √°ll j√≥l, mi az, amit≈ël magabiztosnak √©rzed magad, amikor nem kell pironkodnod, ha valaki r√°d szegezi
+        tekintet√©t, hanem b√ºszk√©n, emelt f≈ëvel √°llod a pillant√°st, mert tiszt√°ban vagy azzal, hogy a N≈êiess√©ged rendben van.
+      </h3>
+
+      <div
+        data-aos="flip-right"
+        data-aos-offset="300"
+        data-aos-easing="ease-in-sine"
+        class="item-eight-a inner-shadow rounded m-3 image-border"
+      ></div>
+      <h3
+        data-aos="fade-down"
+        data-aos-easing="ease-in-sine"
+        data-aos-offset="300"
+        class="item-eight-b p-4 my-auto mx-5 text-justify"
+      >
+        Sz√≠nvar√°zslattal meg√°llap√≠tjuk, melyik sz√≠n √°ll j√≥l.
+        Mely sz√≠nekben pomp√°zol, melyek, amelyek els√°pasztanak.
+        √Åtbesz√©lj√ºk √©s r√°mutatunk arra, hogy mely sz√≠nekb≈ël √°lljon a ruhat√°rad, hogy minden nap √∂nbizalommal telve l√©pj ki az utc√°ra.
+      </h3>
+    </div>
+    <div data-aos="fade" data-aos-duration="800" class="sign-up-button">
+      <h1 class="m-3">Jelentkezz most!</h1>
+      <button
+        type="button"
+        class="btn btn-outline-success m-auto"
+        v-on:click="openSignUp"
+      >Jelentkezem</button>
+      <hr class="w-75" />
+    </div>
+    <div data-aos="fade" data-aos-duration="800" class="item-nine-title">
+      <h1>√âs, ha az el≈ëz≈ëekben le√≠rtak nem elegend≈ëek, akkor mindezek mell√© ...</h1>
+    </div>
+    <div
+      data-aos="zoom-in"
+      data-aos-duration="1200"
+      data-aos-anchor-placement="top-center"
+      class="item-nine m-5"
+    >
+      <div class="item-nine-a">
+        <h2 class="item-nine-a-title mt-3">PiheN≈ë Program Plusz</h2>
+        <p class="h5 item-nine-a-p">R√°ad√°sk√©nt kapsz egy szeretet√©rint√©ses arcmassz√°zst.</p>
+        <div class="item-nine-a-image inner-shadow rounded image-border"></div>
+        <button type="button" class="btn btn-outline-success mx-auto my-3">Ezt K√©rem !</button>
+      </div>
+      <div class="item-nine-b">
+        <h2 class="item-nine-b-title mt-3">PiheN≈ë Program Exra Plusz</h2>
+        <p class="h5 item-nine-b-p">R√°ad√°sk√©nt kapsz egy arcj√≥ga √≥r√°t.</p>
+        <div class="item-nine-b-image inner-shadow rounded image-border"></div>
+        <button type="button" class="btn btn-outline-success mx-auto my-3">Ezt K√©rem !</button>
+      </div>
+    </div>
+    <div
+      data-aos="fade"
+      data-aos-anchor-placement="top-bottom"
+      class="item-ten inner-shadow image-border"
+    >
+      <div data-aos="slide-up" data-aos-duration="800" class="item-ten-p m-5 p-4">
+        <p class="m-auto h5 text-justify">
+          K√∂vetkez≈ë Programunk id≈ëpontja: 2020. J√∫lius 11. szombat. 10-16 √≥r√°ig Helysz√≠n: AnaGa Sz√≠n √©s L√©lek St√∫di√≥ Veresegyh√°z, H√©tvez√©r u. 2/b.
+          √År: 15.000 Ft/f≈ë. Hozz magaddal m√©g egy N≈êT √©s kedvezm√©nyt kaptok mind a ketten.
+        </p>
+        <hr class="w-75" />
+        <img src="../assets/images/workshop14.png" class="w-50 h-50 m-3" />
+      </div>
+      <div data-aos="slide-up" data-aos-duration="800" class="item-ten-p m-5 p-4 h-50">
+        <p class="m-auto h5 text-justify">
+          Gyere el a k√©rd√©seiddel √©s √∫gy t√©rj haza, mint akit kicser√©ltek, tele v√°laszokkal.
+          Mert, magabiztos N≈ê, anya, feles√©g kell minden csal√°dba. T≈ëled fog m≈±k√∂dni minden rendben otthon. T√∂lt≈ëdj fel n√°lunk!
+        </p>
+        <hr class="w-75" />
+        <button
+          type="button"
+          class="btn btn-outline-success mt-3"
+          v-on:click="openSignUp"
+        >Jelentkezem</button>
+      </div>
+      <div data-aos="slide-up" data-aos-duration="800" class="item-ten-p m-5 p-4">
+        <p class="m-auto h5 text-justify">
+          Garanci√°t v√°llalunk az √°ltalunk adott programra. Amennyiben a nap v√©g√©re √∫gy √©rzed, hogy nem kapt√°l elegend≈ë v√°laszt,
+          elegend≈ë felt√∂lt≈ëd√©st r√©sz√ºnkr≈ël √©s ezt, mint √©p√≠t≈ë kritik√°t elmondod nek√ºnk, meghallgatunk, megfogadjuk a tapasztal√°said
+          √©s visszafizetj√ºk ennek a programnak az √°r√°t.
+        </p>
+        <hr class="w-75" />
+        <img src="../assets/images/workshop15.png" class="w-50 h-50 m-3" />
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
+import { workshoppers } from "../firebaseInit";
 
-
-    export default {
-        name: 'Workshop',
-        data() {
-            return {
-                title: 'PiheN&#337 Program',
-                see: 'Megn&#233zem'
+export default {
+  name: "Workshop",
+  data() {
+    return {
+      newEmail: null,
+      showSignUpModal: false,
+      validEmail: true,
+      validEmailFormat: true
+    };
+  },
+  components: {},
+  created() {
+    this.$eventBus.$on("open-signUp", () => {
+      this.showSignUpModal = true;
+    });
+  },
+  methods: {
+    getPic() {
+      return require("../assets/images/" + this.image + ".png");
+    },
+    openSignUp: function() {
+      this.showSignUpModal = true;
+    },
+    closeSignUp: function() {
+      this.newEmail = null;
+      this.validEmail = true;
+      this.validEmailFormat = true;
+      this.showSignUpModal = false;
+    },
+    onSubmit: function() {
+      let reg = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@(([[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,24}))$/;
+      this.validEmailFormat = reg.test(this.newEmail);
+      this.validEmail = true;
+      if (this.validEmailFormat) {
+        workshoppers.on("value", snapshot => {
+          snapshot.forEach(childSnapshot => {
+            if (childSnapshot.val().Email == this.newEmail) {
+              this.validEmail = false;
+              return;
             }
-        },
-        components: {
-
-        },
-        methods: {
-            decoder(str) {
-                var textArea = document.createElement('textarea');
-                textArea.innerHTML = str;
-                return textArea.value;
-            },
-            getPic() {
-                return require('../assets/images/' + this.image + '.png')
-            }
-        }
+          });
+          if (this.validEmail) {
+            workshoppers.push({ Email: this.newEmail, Paid: false });
+            this.showSignUpModal = false;
+          }
+        });
+      }
     }
+  }
+};
 </script>
 
 <style scoped>
-    .see-button {
-        padding: 25px 25px;
-        background-color: transparent;
-        border: 1px solid green;
-    }
+.see-button {
+  padding: 25px 25px;
+  background-color: transparent;
+  border: 1px solid green;
+}
 
-    #prologe {
-        display: grid;
-        width: 100%;
-        height: 100%;
-        grid-template-columns: 5fr 7fr;
-        grid-template-rows: 2fr 1fr 1fr 2fr 2fr 4fr 3fr;
-    }
+p {
+  font-size: 22px;
+  line-height: 32px;
+  margin: 0 0 24px;
+}
 
-    #second-background {
-        z-index: 1;
-        grid-column-start: 1;
-        grid-column-end: 3;
-        grid-row: 1;
-        width: 100%;
-        background-size: cover;
-        background-image: url("../assets/images/workshop12.jpg");
-    }
+.x-button {
+  cursor: pointer;
+}
 
-    .sub-items {
-        z-index: 55;
-        grid-column-start: 1;
-        grid-column-end: 3;
-        grid-row: 5;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr;
-    }
+.my-modal {
+  z-index: 70;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 13;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
 
-    .item-one {
-        border-radius: 5px 5px;
-        background-color: rgba(255,255,255,0.6);
-        grid-column: 1;
-        grid-row: 1;
-        z-index: 1;
-    }
+.sign-up-form {
+  position: sticky;
+  top: 20%;
+}
 
-    .item-two {
-        grid-column-start: 1;
-        grid-column-end: 3;
-        grid-row: 3;
-        width: 100%;
-        background-color: white;
-    }
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
 
-    .item-three {
-        z-index: 55;
-        background-size: auto;
-        background-image: url("../assets/images/background.png");
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr;
-        grid-column-start: 1;
-        grid-column-end: 3;
-        grid-gap: 15px;
-        grid-row: 4;
-    }
+.sign-up-button {
+  z-index: 55;
+  border-radius: 5px 5px;
+  padding: 10px 10px;
+  background-color: rgba(255, 255, 255, 0.7);
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row: 6;
+}
 
-    .item-three-a {
-        grid-column: 1;
-        grid-row: 1;
-    }
+#prologe {
+  z-index: 1;
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-columns: 5fr 8fr;
+  grid-template-rows: 2fr 1fr 1fr 2fr 3fr 1fr 1fr 3fr 2fr 2fr 2fr 2fr;
+}
 
-    .item-three-b {
-        border-radius: 5px 5px;
-        padding: 10px 10px;
-        background-color: rgba(255,255,255,0.6);
-        grid-column: 2;
-        grid-row: 1;
-    }
+#second-background {
+  z-index: 1;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row: 1;
+  width: 100%;
+  background-size: cover;
+  background-image: url("../assets/images/workshop12.jpg");
+}
 
-    .item-four {
-        border-radius: 5px 5px;
-        padding: 10px 10px;
-        background-color: rgba(255,255,255,0.6);
-        grid-column: 2;
-        grid-row: 4;
-    }
+.sub-items {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row: 5;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-column-gap: 10px;
+}
 
-    .item-five-a {
-        grid-column: 1;
-        grid-row: 1;
-        background-size: cover;
-        background-image: url("../assets/images/workshop3.png")
-    }
+.sub-items-bg {
+  z-index: 0;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 5;
+  grid-row-end: 9;
+  background-size: cover;
+  background-image: url("../assets/images/workshop18.jpg");
+}
 
-    .item-five-b {
-        grid-column: 2;
-        grid-row: 1;
-    }
+.item-one {
+  border-radius: 5px 5px;
+  background-color: rgba(255, 255, 255, 0.6);
+  grid-column: 1;
+  grid-row: 1;
+  z-index: 55;
+}
 
-    .item-six-a {
-        grid-column: 2;
-        grid-row: 2;
-        background-size: cover;
-        background-image: url("../assets/images/workshop4.png")
-    }
+.item-two {
+  z-index: 56;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row: 1;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding: 10px 10px;
+  background-color: rgba(255, 255, 255, 0.7);
+}
 
-    .item-six-b {
-        grid-column: 1;
-        grid-row: 2;
-    }
+.item-three {
+  z-index: 55;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 3fr;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-column-gap: 15px;
+  grid-row: 4;
+  background-color: white;
+}
 
-    .item-seven-a {
-        grid-column: 1;
-        grid-row: 3;
-        background-size: cover;
-        background-image: url("../assets/images/workshop6.png")
-    }
+.item-three-bg {
+  z-index: 55;
+  background-size: cover;
+  background-image: url("../assets/images/workshop17.jpg");
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
 
-    .item-seven-b {
-        grid-column: 2;
-        grid-row: 3;
-    }
+.item-three-a {
+  z-index: 55;
+  grid-column: 1;
+  grid-row: 1;
+}
 
-    .item-eight-a {
-        grid-column: 2;
-        grid-row: 4;
-        background-size: cover;
-        background-image: url("../assets/images/workshop7.jpeg")
-    }
+.item-three-b {
+  z-index: 55;
+  border-radius: 5px 5px;
+  padding: 10px 10px;
+  background-color: rgba(255, 255, 255, 0.7);
+  grid-column: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
 
-    .item-eight-b {
-        grid-column: 1;
-        grid-row: 4;
-    }
+.item-four {
+  border-radius: 5px 5px;
+  padding: 10px 10px;
+  background-color: rgba(255, 255, 255, 0.6);
+  grid-column: 2;
+  grid-row: 4;
+}
 
-    .item-nine {
-        z-index: 55;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr;
-        grid-column-start: 1;
-        grid-column-end: 3;
-        grid-row: 6;
-        grid-gap: 10px;
-        width: 100%;
-    }
+.item-five-a {
+  grid-column: 1;
+  grid-row: 1;
+  background-size: cover;
+  background-image: url("../assets/images/workshop3.png");
+}
 
-    .item-nine-a {
-        z-index: 55;
-        grid-template-rows: 1fr;
-        grid-column: 1;
-        grid-row: 1;
-        background-color: white;
-    }
+.image-border {
+  border: 5px solid rgba(255, 255, 255, 1);
+}
 
-    .item-nine-b {
-        z-index: 55;
-        grid-template-rows: 1fr;
-        grid-column: 2;
-        grid-row: 1;
-        background-color: white;
-    }
+.item-five-b {
+  grid-column: 2;
+  grid-row: 1;
+  border-radius: 5px 5px;
+  background-color: rgba(255, 255, 255, 0.7);
+}
 
-    .item-nine-a-title {
-        z-index: 55;
-        grid-row: 1;
-        background-color: white;
-    }
+.item-six-a {
+  grid-column: 2;
+  grid-row: 2;
+  background-size: cover;
+  background-image: url("../assets/images/workshop4.png");
+}
 
-    .item-nine-b-title {
-        background-color: white;
-        z-index: 55;
-        grid-row: 1;
-    }
+.item-six-b {
+  grid-column: 1;
+  grid-row: 2;
+  border-radius: 5px 5px;
+  background-color: rgba(255, 255, 255, 0.7);
+}
 
-    .item-nine-a-image {
-        background-size: cover;
-        background-image: url("../assets/images/workshop9.jpeg");
-        grid-row: 2;
-        height: 100%;
-    }
+.item-seven-a {
+  grid-column: 1;
+  grid-row: 3;
+  background-size: cover;
+  background-image: url("../assets/images/workshop6.png");
+}
 
-    .item-nine-b-image {
-        background-size: cover;
-        background-image: url("../assets/images/workshop10.jpeg");
-        grid-row: 2;
-        height: 100%;
-    }
+.item-seven-b {
+  grid-column: 2;
+  grid-row: 3;
+  border-radius: 5px 5px;
+  background-color: rgba(255, 255, 255, 0.7);
+}
 
-    .inner-shadow {
-        box-shadow: 0px 0px 25px 20px rgba(0,0,0,0.7) inset;
-    }
+.item-eight-a {
+  grid-column: 2;
+  grid-row: 4;
+  background-size: cover;
+  background-image: url("../assets/images/workshop7.jpeg");
+}
 
-    .black-shadow {
-        background-color: rgba(0,0,0,0.9);
-        box-shadow: 0px 0px 25px 30px rgba(0,0,0,0.9);
-    }
+.item-eight-b {
+  grid-column: 1;
+  grid-row: 4;
+  border-radius: 5px 5px;
+  background-color: rgba(255, 255, 255, 0.7);
+}
 
-    #background {
-        grid-column-start: 1;
-        grid-column-end: 3;
-        grid-row-start: 1;
-        grid-row-end: 2;
-        z-index: 0;
-        width: auto;
-        height: 100%;
-        background-size: cover;
-        background-image: url("../assets/images/workshop1.jpg");
-    }
+.item-nine-title {
+  z-index: 55;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row: 7;
+  border-radius: 5px 5px;
+  padding: 10px 10px;
+  background-color: rgba(255, 255, 255, 0.7);
+}
 
-    .mt-20 {
-        margin-top: 20%;
-    }
+.item-nine {
+  z-index: 55;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row: 8;
+  grid-gap: 10px;
+}
 
-    .mb-20 {
-        margin-bottom: 20%;
-    }
+.item-nine-bg {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row: 8;
+  background-size: cover;
+  background-image: url("../assets/images/workshop19.jpg");
+}
 
-    .w-95 {
-        width: 95%;
-    }
+.item-nine-a {
+  z-index: 55;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 6fr 1fr;
+  grid-column: 1;
+  grid-row: 1;
+  border-radius: 5px 5px;
+  background-color: rgba(255, 255, 255, 0.7);
+}
 
-    .image-title {
-        text-align: center;
-        vertical-align: middle;
-        display: table-cell;
-    }
+.item-nine-b {
+  z-index: 55;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 6fr 1fr;
+  grid-column: 2;
+  grid-row: 1;
+  border-radius: 5px 5px;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.item-nine-a-title {
+  z-index: 55;
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.item-nine-b-title {
+  z-index: 55;
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.item-nine-a-p {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.item-nine-b-p {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.item-nine-a-image {
+  background-size: cover;
+  background-image: url("../assets/images/workshop9.jpeg");
+  grid-column: 1;
+  grid-row: 3;
+  z-index: 55;
+}
+
+.item-nine-b-image {
+  background-size: cover;
+  background-image: url("../assets/images/workshop10.jpeg");
+  grid-column: 1;
+  grid-row: 3;
+  z-index: 55;
+}
+
+.item-ten {
+  z-index: 0;
+  height: fit-content;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 9;
+  grid-row-end: 13;
+  background-size: cover;
+  background-image: url("../assets/images/workshop13.jpg");
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+.item-ten-p {
+  border-radius: 5px 5px;
+  background-color: rgba(255, 255, 255, 0.7);
+  grid-row: 2;
+}
+
+.inner-shadow {
+  box-shadow: 0px 0px 25px 20px rgba(0, 0, 0, 0.7) inset;
+}
+
+.black-shadow {
+  box-shadow: 0px 0px 25px 30px rgba(0, 0, 0, 0.9);
+}
+
+#background {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 4;
+  z-index: 1;
+  width: auto;
+  height: 100%;
+  background-size: cover;
+  background-image: url("../assets/images/workshop1.jpg");
+}
+
+.mt-20 {
+  margin-top: 20%;
+}
+
+.mb-20 {
+  margin-bottom: 20%;
+}
+
+.w-95 {
+  width: 95%;
+}
+
+.image-title {
+  text-align: center;
+  vertical-align: middle;
+  display: table-cell;
+}
 </style>
