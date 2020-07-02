@@ -7,7 +7,7 @@
             <div class="w-100 d-inline-block">
               <span v-on:click="closeSignUp" class="float-right mr-3 mt-3 x-button">&#10005;</span>
             </div>
-            <p class="card-title h3 mx-auto my-3 d-inline-block">Kérlek írd be az -mail címed !</p>
+            <p class="card-title h3 mx-auto my-3 d-inline-block">Kérlek írd be az e-mail címed !</p>
             <input
               type="email"
               class="form-control w-75 mx-auto text-center"
