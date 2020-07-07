@@ -20,8 +20,8 @@ export default {
   components: {
     Navbar,
     Contactbar,
-    //WorkshopFeed
     Workshop
+    //WorkshopFeed
   },
   methods: {}
 };
@@ -57,7 +57,6 @@ body {
 }
 
 .cover {
-  height: 650%;
   position: absolute;
   top: 0;
   left: 0;
