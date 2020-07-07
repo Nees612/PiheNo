@@ -12,7 +12,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Galléria</a>
+          <a class="nav-link" href="#">Galéria</a>
         </li>
         <li class="nav-item dropdown">
           <a
@@ -34,7 +34,11 @@
         </li>
       </ul>
     </div>
-    <button type="button" class="btn btn-outline-success" v-on:click="openSignUp">Jelentkezem</button>
+    <button
+      type="button"
+      class="btn btn-outline-success subscribe-btn"
+      v-on:click="openSignUp"
+    >JELENTKEZEM</button>
   </nav>
 </template>
 
@@ -61,5 +65,9 @@ nav {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   box-shadow: 0px 15px 25px 0px rgba(0, 0, 0, 0.4) inset;
+}
+
+.subscribe-btn {
+  width: 280px;
 }
 </style>
